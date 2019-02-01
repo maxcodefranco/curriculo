@@ -1,21 +1,113 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="uk-container uk-container-small">
 
-<router-outlet></router-outlet>
+  <article class="uk-article">
+
+    <p class="uk-article-meta">Currículo Lates</p>
+
+    <div class="cur-header">
+      <div class="uk-grid">
+        <div class="uk-width-auto">
+          <img class="img-profile" src="assets/images/profile.jpg" alt="">
+        </div>
+        <div class="uk-width-expand">
+          <h1 class="uk-article-title cur-title">
+              {{profileBasic.nome}}
+            </h1>
+            <p class="uk-text-lead">{{profileBasic.profissao}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cur-section">
+
+      <div class="uk-grid">
+        <div class="uk-width-expand">
+            <p class="uk-dropcap" [innerHTML]="profileBasic.sobre">
+            </p>
+          </div>
+          <div class="uk-width-auto">
+            <div uk-card class="uk-card-default uk-card-body">
+              <h3><span uk-icon="user"></span> Contato</h3>
+              <ul class="uk-list">
+                <li><span uk-icon="phone"></span> {{profileContato.telefone}}</li>
+                <li><span uk-icon="mail"></span> E-mail: {{profileContato.email}}</li>
+                <li>
+                  <a *ngIf="profileContato.facebook" uk-icon="facebook" href="{{profileContato.facebook}}" target="_blank"></a>
+                  <a *ngIf="profileContato.instagram" uk-icon="instagram" href="{{profileContato.instagram}}" target="_blank"></a>
+                </li>
+                <li>{{ profileEndereco.cidade+"/"+profileEndereco.uf }}</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+
+    <div class="cur-section cur-section-skills">
+        <h3 class="cur-section-title">
+          <span uk-icon="code"></span>
+          Skills
+        </h3>
+        <div class="uk-grid uk-child-width-1-6 cur-section-skills-body">
+          <div *ngFor="let l of profileSkills.list">
+              <a class="uk-text-link" class="uk-label">{{ l.titulo }}</a>
+          </div>
+        </div>
+    </div>
+
+
+
+  
+    <div class="cur-section cur-section-xp">
+      
+      <h3 class="cur-section-title">
+        <span uk-icon="server"></span>
+        Experiência
+      </h3>
+
+      <div *ngFor="let xp of profileXp.jobs">
+        <div class="uk-card uk-card-xp">
+          <h3 class="uk-card-title">{{ xp.cargo }} <a class="title-empresa">{{ xp.empresa }}</a></h3>
+          <p class="xp-date">
+            De {{ xp.inicio }} | 
+            {{ xp.fim?"Até "+xp.fim:"Atual" }} - {{ xp.local }}
+          </p>
+          <p>{{xp.descricao}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="cur-section-academico">
+      <h3 class="cur-section-title">
+        <span uk-icon="bookmark"></span>
+        Acadêmico
+      </h3>
+
+      <div class="uk-grid uk-child-width-1-1">
+        <div>
+          <div *ngFor="let acad of profileAcademico.timeline"
+              class="uk-card uk-card-body uk-card-default">
+            <h3 class="uk-card-title">{{ acad.curso }}</h3>
+            <h4><span class="uk-label">{{ acad.tipo }}</span> {{ acad.instituicao }}</h4>
+            
+            <p>De {{ acad.inicio }}{{ acad.fim?"até "+acad.fim:', ainda cursando' }}
+              - {{ acad.local }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>Este currículo está disponível em {{ profileBasic.urlcurriculo }}</p>
+
+  </article>
+
+
+
+  <router-outlet></router-outlet>
+  
+
+
+</div>

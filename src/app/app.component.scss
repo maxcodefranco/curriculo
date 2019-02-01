@@ -1,0 +1,138 @@
+@import '../styles/variables.scss';
+
+@media print {
+    div:not(.cur-section) {page-break-inside: avoid;}
+
+
+    .cur-section{
+        margin: 20px 0!important;
+        padding: 20px 0!important;
+    }
+
+    .uk-card-body,
+    .cur-header{
+        margin: 0!important;
+        padding: 0!important;
+    }
+}
+
+@page  
+{ 
+    size: auto;   /* auto is the initial value */ 
+
+    /* this affects the margin in the printer settings */ 
+    margin: 25mm 25mm 25mm 25mm;  
+} 
+
+article {
+    margin: 0 30px 50px 30px;
+}
+
+.cur-header {
+    text-align: center;
+    margin-bottom: 100px;
+
+    .cur-title {
+        font-weight: 700;
+    }
+
+    .uk-text-lead {
+        font-size: 20px;
+    }
+
+    .img-profile {
+        width: 150px;
+        border-radius: 100%;
+    }
+
+}
+
+.cur-section {
+    margin: 60px 0;
+}
+
+
+
+.uk-card {
+    h3,h4 {
+        margin: 0;
+    }
+
+    .uk-card-title {
+        font-weight: 700;
+    }
+}
+
+
+.cur-section-title {
+    font-size: 30px;
+    border-bottom: 2px solid #ccc;
+    color: $global-link-color;
+    padding: 0 0 10px 0;
+    font-weight: 100;
+
+    .uk-icon {
+        border: 2px solid $global-link-color;
+        border-radius: 100px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+}
+
+.uk-card-xp {
+
+    margin-bottom: 30px;
+
+
+    .uk-card-title, p {
+        margin: 0;
+    }
+    
+    .uk-card-title {
+        border-left: 4px solid $global-link-color;
+        padding-left: 12px;
+        margin-bottom: 10px;
+    }
+
+    .title-empresa {
+        text-decoration: none;
+        font-size: 19px;
+        color: $global-link-color;
+        display: inline-block;
+        border: 1px solid $global-link-color;
+        padding: 0 10px;
+        border-radius: 50px;
+        margin-left: 19px;
+
+        &:hover {
+            box-shadow: 0 0 20px rgba($global-link-color,.3);
+        }
+    }
+}
+
+
+.cur-section-skills {
+    .cur-section-skills-body {
+        text-align: center;
+    }
+
+    .uk-label {
+        padding: 10px 15px;
+        font-size: 15px;
+        margin-bottom: 10px;
+        border-radius: 50px;
+    }
+
+}
+
+.cur-section-academico {
+
+    .uk-card {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+}

@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+$global-link-color: #00b4ff;
+
+@import "./styles/variables.scss";
+@import "uikit/src/scss/mixins.scss";
+@import "uikit/src/scss/uikit.scss";
