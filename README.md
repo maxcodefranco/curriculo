@@ -1,4 +1,4 @@
-# Curriculo
+# Currículo
 
 Currículo desenvolvido com [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
