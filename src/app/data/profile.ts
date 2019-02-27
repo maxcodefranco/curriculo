@@ -12,13 +12,14 @@ export const profileBasic = {
         rotinas para sincronização de dados de Erp com serviços externos, além de sites desenvolvidos em Wordpress.
     `,
     nascimento: "15/12/1993",
-    urlcurriculo: 'http://curriculo.devmax.com.br'
+    urlcurriculo: 'https://maxcodefranco.github.io'
 }
 
 export const profileContato = {
     email: "maxcodefranco@gmail.com",
     telefone: "+55 (71) 99414-9729",
     facebook: "https://www.facebook.com/maxcodefranco",
+    github: "https://github.com/maxcodefranco",
     instagram: null
 }
 
@@ -75,19 +76,18 @@ export const profileSkills = {
 
 export const profileXp = {
     jobs: [
+
         {
-            cargo: "Web Designer",
-            empresa: "Laboratório Lapec",
-            atividade: "Análises Clínicas",
-            local:"Jacobina/BA",
+            cargo: "Desenvolvedor de software Web",
+            empresa: "Viswall | Autônomo",
+            atividade: "Sinalização Digital",
+            local: "Jacobina/BA",
             latlong: [],
-            inicio: "01/2018",
-            fim: null,
+            inicio: "07/2014",
+            fim: "11/2017",
             descricao: `
-                Empresa com cerca de 90-100 funcionários, certificado padrão ISO9001.
-                Gestão de marketing inbound e outbound. Desenvolvimento.
-                Desenvolvimento de planilhas e ferramentas de apoio à decisão. Desenvolvimento do site com integração ao Banco de Dados do ERP do laboratório. 
-                Principais Linguagens/Tecnologias: PHP (Laravel), Javascript (Nodejs, Vue, Angular).
+            Manutenção de plataforma open-source e desenvolvimento de módulos como sistema de pagamento utilizando os gateways pagseguro e paypal, planos para licença de uso do produto. 
+            Principais linguagens: Javascript (Nodejs, Angularjs), PHP, C#.
             `
         },
         {
@@ -103,20 +103,30 @@ export const profileXp = {
             `
         },
         {
-            cargo: "Desenvolvedor de software Web",
-            empresa: "Viswall | Autônomo",
-            atividade: "Sinalização Digital",
-            local: "Jacobina/BA",
+            cargo: "Web Designer",
+            empresa: "Laboratório Lapec",
+            atividade: "Análises Clínicas",
+            local:"Jacobina/BA",
             latlong: [],
-            inicio: "07/2014",
-            fim: "11/2017",
+            inicio: "01/2018",
+            fim: null,
             descricao: `
-            Manutenção de plataforma open-source e desenvolvimento de módulos como sistema de pagamento utilizando os gateways pagseguro e paypal, planos para licença de uso do produto. 
-            Principais linguagens: Javascript (Nodejs, Angularjs), PHP, C#.
+                Empresa com cerca de 90-100 funcionários, certificado padrão ISO9001.
+                Gestão de marketing inbound e outbound. Desenvolvimento.
+                Desenvolvimento de planilhas e ferramentas de apoio à decisão. Desenvolvimento do site com integração ao Banco de Dados do ERP do laboratório. 
+                Principais Linguagens/Tecnologias: PHP (Laravel), Javascript (Nodejs, Vue, Angular).
             `
         }
     ]
 }
+
+export const projetos = [
+    {
+        empresa: "Laboratório Lapec",
+        descricao:"Desenvolvimento do site do laboratório com informações integradas ao banco de dados principal do ERP para consultas de exames. (Estágio: Etapa Final)",
+        url: "http://v2.lapec.com.br"
+    }
+]
 
 export const profileCerts = {
 

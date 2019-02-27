@@ -7,7 +7,8 @@ import {
   profileSkills,
   profileAcademico,
   profileCerts,
-  profileXp
+  profileXp,
+  projetos
 } from "../data/profile";
 
 
@@ -58,6 +59,10 @@ export class ProfileService {
 
   public getXp(): Observable<{}> {
     return of(profileXp);
+  }
+
+  public getProjetos(): Observable<{}> {
+    return of(projetos);
   }
 
 }

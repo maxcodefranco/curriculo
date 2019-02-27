@@ -22,7 +22,7 @@
 
       <div class="uk-grid">
         <div class="uk-width-expand">
-            <p class="uk-dropcap" [innerHTML]="profileBasic.sobre">
+            <p class="uk-dropcap profile-description" [innerHTML]="profileBasic.sobre">
             </p>
           </div>
           <div class="uk-width-auto">
@@ -30,12 +30,15 @@
               <h3><span uk-icon="user"></span> Contato</h3>
               <ul class="uk-list">
                 <li><span uk-icon="phone"></span> {{profileContato.telefone}}</li>
-                <li><span uk-icon="mail"></span> E-mail: {{profileContato.email}}</li>
+                <li><span uk-icon="mail"></span> {{profileContato.email}}</li>
+                <li><span uk-icon="github"></span> {{profileContato.github}}</li>
+                <li><span uk-icon="location"></span> {{ profileEndereco.cidade+"/"+profileEndereco.uf }}</li>
                 <li>
-                  <a *ngIf="profileContato.facebook" uk-icon="facebook" href="{{profileContato.facebook}}" target="_blank"></a>
-                  <a *ngIf="profileContato.instagram" uk-icon="instagram" href="{{profileContato.instagram}}" target="_blank"></a>
+                  <a *ngIf="profileContato.facebook" uk-icon="facebook" [href]="profileContato.facebook" target="_blank"></a> {{profileContato.facebook.replace("https://www.facebook.com","")}}
                 </li>
-                <li>{{ profileEndereco.cidade+"/"+profileEndereco.uf }}</li>
+                <li>
+                  <a *ngIf="profileContato.instagram" uk-icon="instagram" [href]="profileContato.instagram" target="_blank"></a>
+                </li>
               </ul>
             </div>
           </div>
@@ -79,6 +82,27 @@
     </div>
 
 
+
+
+    <div class="cur-section cur-section-projetos">
+      
+      <h3 class="cur-section-title">
+        <span uk-icon="album"></span>
+        Projetos
+      </h3>
+
+      <div *ngFor="let p of projetos">
+        <div class="uk-card uk-card-xp">
+          <h3 class="uk-card-title">{{ p.empresa }}</h3>
+          <p><a [href]="p.url" target="_blank">{{p.url}}</a></p>
+          <p>{{p.descricao}}</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
     <div class="cur-section-academico">
       <h3 class="cur-section-title">
         <span uk-icon="bookmark"></span>
@@ -92,7 +116,7 @@
             <h3 class="uk-card-title">{{ acad.curso }}</h3>
             <h4><span class="uk-label">{{ acad.tipo }}</span> {{ acad.instituicao }}</h4>
             
-            <p>De {{ acad.inicio }}{{ acad.fim?"até "+acad.fim:', ainda cursando' }}
+            <p>De {{ acad.inicio }} {{ acad.fim?"até "+acad.fim:', ainda cursando' }}
               - {{ acad.local }}
             </p>
           </div>
@@ -100,7 +124,7 @@
       </div>
     </div>
 
-    <p>Este currículo está disponível em {{ profileBasic.urlcurriculo }}</p>
+    <p class="uk-text-small">Este currículo está disponível em <a href="{{profileBasic.urlcurriculo}}">{{ profileBasic.urlcurriculo }}</a></p>
 
   </article>
 

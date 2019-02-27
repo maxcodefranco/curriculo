@@ -1,12 +1,12 @@
 @import '../styles/variables.scss';
 
 @media print {
-    div:not(.cur-section) {page-break-inside: avoid;}
+    div.cur-section {page-break-inside: avoid;}
 
 
     .cur-section{
-        margin: 20px 0!important;
-        padding: 20px 0!important;
+        margin: 10px 0!important;
+        padding: 10px 0!important;
     }
 
     .uk-card-body,
@@ -24,8 +24,16 @@
     margin: 25mm 25mm 25mm 25mm;  
 } 
 
+a {
+    text-decoration: none !important;
+}
+
 article {
-    margin: 0 30px 50px 30px;
+    margin: 0 30px 50px 30px!important;
+}
+
+.profile-description{
+    text-align: justify;
 }
 
 .cur-header {
@@ -65,7 +73,7 @@ article {
 
 
 .cur-section-title {
-    font-size: 30px;
+    font-size: 25px;
     border-bottom: 2px solid #ccc;
     color: $global-link-color;
     padding: 0 0 10px 0;

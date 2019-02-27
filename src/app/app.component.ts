@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   protected profileAcademico = {};
   protected profileCerts = {};
   protected profileXp = {};
+  protected projetos = {};
 
 
   constructor (
@@ -55,6 +56,10 @@ export class AppComponent implements OnInit {
 
     this.profile.getXp().subscribe(address => {
       this.profileXp = address;
+    });
+    
+    this.profile.getProjetos().subscribe(projetos => {
+      this.projetos = projetos;
     })
 
   }
